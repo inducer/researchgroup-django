@@ -1,0 +1,93 @@
+/* the menu */
+
+#left ul,#left li,#left a {
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+#left ul {
+  width:105px;
+  /* border:1px solid #9d9da1; */
+  /*background-color:#D4DDFF;*/
+  /* background:#817A68;*/
+  color:#625E7F;
+  background:#E6E6FF;
+  list-style:none;
+}
+
+#left li {
+  position:relative;
+  padding:1px;
+  /* padding-left:26px; */
+  /*
+  background:url("images/roundrec.gif") no-repeat;
+  background-position: 3px 3px;
+   */
+z-index:9;
+}
+#left li.folder {
+  /*
+  background:url("images/roundrec.gif") no-repeat;
+  background-position: 3px 3px;
+   */
+}
+
+#left li.folder ul {
+  position:absolute;
+  left:105px; /* IE */
+  top:0px;
+}
+li.folder>ul { left:90px; } /* others */
+
+#left a {
+  /*margin-top:5px;*/
+  padding:2px;
+  background: white;
+  /* background:#E6DEC5; */
+  border:1px solid #888;
+  /*height: 30px;*/
+  text-align: center;
+  text-decoration:none;
+  color:#625E7F;
+  /* color:#4A8BBC; */
+  font-weight:bold;
+  width:100%; /* IE */
+}
+#left li>a { width:auto; } /* others */
+
+#left li a.submenu {
+  /* background:url("images/roundrec.gif") right no-repeat; 
+  background-position: 3px 3px; */
+}
+
+/* regular hovers */
+
+#left a:hover {
+  border-color:gray;
+  background-color:#625E7F; 
+  /* background:#C1BAA5; */
+  /*
+  background:url("images/roundrecd.gif") no-repeat; 
+  background-position: 3px 3px;
+   */
+color:black;
+}
+
+#left li.folder a:hover {
+  /* background-color:#bbb7c7;*/ 
+}
+
+/* hovers with specificity */
+
+#left li.folder:hover { z-index:10; }
+
+#left ul ul, li:hover ul ul {
+  display:none;
+}
+
+#left li:hover ul, li:hover li:hover ul {
+  display:block;
+}
+

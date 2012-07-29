@@ -1,0 +1,55 @@
+{% extends "researchgroup/one-column.html" %}
+
+{% load email %}
+{% block title %}Seminars in {{sem_year}}{% endblock %}
+
+{% block main %}
+  <h1> Scientific Computing Group Report  - Detail view</h1>
+  <p>
+    <em>Identifier:</em> {{rep.year}}-{{rep.number}}
+  </p>
+  <p>
+    <em>Author(s):</em> {{rep.authors}}
+  </p>
+  <p>
+    <em>Title:</em> {{rep.title}}
+  </p>
+  <p>
+    <em>Page count:</em> {{rep.pages}} pp.
+  </p>
+  <p>
+    <em>Date:</em> {{rep.date}}
+  </p>
+  {% if rep.abstract %}
+    <p><em>Abstract:</em></p>
+    <p>{{rep.abstract}}</p>
+  {% endif %}
+  <p>
+    <em>BibTeX:</em>
+    <p class="bibtex">
+    @techreport{brown_sc_{{rep.year}}_{{rep.number}},<br/>
+    &nbsp;&nbsp;title = "{% templatetag openbrace %}{{rep.title}}{% templatetag closebrace %}",<br/>
+    &nbsp;&nbsp;author = "{{rep.authors}}",<br/>
+    &nbsp;&nbsp;institution = "Scientific Computing Group, Brown University",<br/>
+    &nbsp;&nbsp;number = "{{rep.year}}-{{rep.number}}",<br/>
+    &nbsp;&nbsp;address = "Providence, RI, USA",<br/>
+    &nbsp;&nbsp;year = {{rep.date.year}},<br/>
+    &nbsp;&nbsp;month = {{rep.date|date:"b" }},<br/>
+    }<br/>
+    </p>
+  </p>
+  {% if rep_files %}
+    <p>
+      <strong>Download:</strong>
+      <ul>
+      {% for file in rep_files %}
+        {% if file.file.url %}
+          <li><a href="{{file.file.url}}">{{file.description}}</a> 
+          ({{ file.file.size|filesizeformat }})</li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </p>
+  {% endif %}
+{% endblock %}
+

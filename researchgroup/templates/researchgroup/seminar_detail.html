@@ -1,0 +1,54 @@
+{% extends "researchgroup/one-column.html" %}
+
+{% load email %}
+{% block title %}Seminars Detail View{% endblock %}
+
+{% block main %}
+  <h1> Scientific Computing Group Seminars  - Detail View</h1>
+
+  <p>
+    <em>Speaker:</em>
+    {% if sem.speaker_homepage %}
+      <a href="{{sem.speaker_homepage}}">{{sem.speaker}}</a>
+    {% else %}
+      {{sem.speaker}}
+    {% endif %}
+  </p>
+  {% if sem.speaker_affiliation %}
+    <p>
+    <em>Affiliation:</em> {{sem.speaker_affiliation}}
+    </p>
+  {% endif %}
+  {% if sem.title %}
+    <p>
+      <em>Talk Title:</em> {{sem.title}}
+    </p>
+  {% endif %}
+  {% if sem.invited_by %}
+    <p>
+      <em>Invited by:</em> {{sem.invited_by}}
+    </p>
+  {% endif %}
+  {% if sem.notes %}
+    <p>
+      <em>Notes:</em> {{sem.notes}}
+    </p>
+  {% endif %}
+  <p>
+    <em>Time:</em> {{ sem.time|date:"N d Y P" }}
+  </p>
+  {% if sem.location %}
+    <p>
+      <em>Location:</em> {{sem.location}}
+    </p>
+  {% endif %}
+  {% if sem.abstract %}
+    <p><em>Abstract:</em></p>
+    <p>{{sem.abstract}}</p>
+  {% endif %}
+  {% if sem.slides %}
+    <p>
+    <a href="{{sem.slides.url}}">Download Slides</a>
+    </p>
+  {% endif %}
+{% endblock %}

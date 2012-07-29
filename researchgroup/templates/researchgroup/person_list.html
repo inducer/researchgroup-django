@@ -1,0 +1,77 @@
+{% extends "researchgroup/one-column.html" %}
+
+{% load email %}
+{% block title %}{{pcat.name}}{% endblock %}
+
+{% block main %}
+      <table style="margin-left:-2px">
+        <tr>
+          {% for cat in pcat_list %}
+            {% ifequal cat.id pcat.id %}
+              <td class="topmenuactive"> 
+                <div class="activetab">{{ cat.name }}</div>
+              </td> 
+            {% else %}
+              <td class="topmenu"> 
+                <div> <a class="menulink" 
+                  href="{{dynsite_root}}people/{{ cat.name|lower }}/">{{ cat.name }}</a> </div> 
+              </td>
+            {% endifequal %}
+          {% endfor %}
+        </tr>
+      </table>
+      <table  class="contenttable" cellspacing="0" summary="">
+        <tr class="head">
+          <th class="name">Name</th>
+          <th class="email">Email</th>
+          <th>Research</th>
+          <th></th>
+        </tr>
+
+        {% for person in object_list %}
+        <tr>
+          <th class="name">
+            <p>
+              {% if person.homepage %}
+                <a href="{{person.homepage}}">{{person.first_name}} {{person.middle_name}} {{person.last_name}}</a></p>
+              {% else %}
+                {{person.first_name}} {{person.middle_name}} {{person.last_name}}
+              {% endif %}
+            </p>
+
+            {% if person.title %}
+              <p class="departmenttitle">{{person.title}}</p>
+            {% endif %}
+            {% if person.graduation_year %}
+              <p class="graduation_year">
+                Graduated: {{person.graduation_year}}
+              </p>
+            {% endif %}
+          </th>
+          <td class="email">
+          <p>{{ person.email|scramblemail }}</p>
+          </td>
+          <td class="research">
+          {% if person.research_area %}
+            <p>{{person.research_area}}</p>
+          {% endif %}
+          {% if person.advisors.count %}
+            <p class="advisor">
+              Advisor{{ person.advisors.count|pluralize }}: 
+              {% for adv in person.advisors.all %}
+                {{adv}}{% if not forloop.last %},{% endif %}
+              {% endfor %}
+            </p>
+          {% endif %}
+          </td>
+          <td class="tableimage">
+            {% if person.photo %}
+            <img alt="{{person.first_name}} {{person.last_name}}" src="{{ person.photo.url }}" height="100">
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+
+      </table>
+
+{% endblock %}

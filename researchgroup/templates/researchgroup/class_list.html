@@ -1,0 +1,30 @@
+{% extends "researchgroup/one-column.html" %}
+
+{% load email %}
+{% block title %}Classes{% endblock %}
+
+{% block main %}
+  <h1>Scientific Computing Group Courses</h1>
+  
+  <p>
+  The Scientific Computing Group offers the following courses:
+  <ul>
+    {% for cls in class_list %}
+    <li><a href="{{dynsite_root}}classes/#{{ cls.department|lower }}{{cls.number}}">{{cls.department}}{{cls.number}}</a></li>
+    {% endfor %}
+  </ul>
+  </p>
+
+  {% for cls in class_list %}
+    <hr/>
+    <p><b><a name="{{ cls.department|lower }}{{cls.number}}">{{cls.department}}{{cls.number}} -- {{cls.title}}</a></b></p>
+
+    <p>{{cls.abstract}}</p>
+    {% if cls.prerequisites %}
+    <p><em> Prerequisites: {{cls.prerequisites}} </em></p>
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}
+
+

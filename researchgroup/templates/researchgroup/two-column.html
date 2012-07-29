@@ -1,0 +1,20 @@
+{% extends "researchgroup/skeleton.html" %}
+
+{% block body %}
+  <div id="right" class="column">
+    <div class="right">
+      {% block right %}
+      Hello, World!
+      {% endblock %}
+    </div>
+  </div>
+
+  <div id="center" class="column">
+    <div class="center">
+      {% block main %}
+      Hello, World!
+      {% endblock %}
+    </div>
+  </div>
+
+{% endblock %}

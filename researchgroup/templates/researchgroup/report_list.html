@@ -1,0 +1,45 @@
+{% extends "researchgroup/one-column.html" %}
+
+{% load email %}
+{% block title %}Reports -- {{ rep_year|title }}{% endblock %}
+
+{% block main %}
+  <h1>
+      Scientific Computing Group Reports -- {{ rep_year|title }}
+  </h1>
+  <p>
+    Other years:
+    <a href="{{dynsite_root}}reports/by-year/all/">All</a>
+    {% for year in rep_year_list %}
+      &middot;
+      <a href="{{dynsite_root}}reports/by-year/{{year}}/">{{year}}</a>
+      {% endfor %}
+  </p>
+
+  <table cellspacing="0">
+    <tr class="head">
+      <th class="title"><div class="toprow">Title/Author(s)</div></th>
+      <th class="numid">ID</th>
+      <th class="length">Length</th>
+      <th class="download"> Download </th>
+    </tr>
+    {% for rep in object_list %}
+      <tr>
+        <th class="title">
+          <p><a href="{{dynsite_root}}reports/{{rep.year}}-{{rep.number}}/">{{rep.title}}</a></p>
+          <p class="author">by {{rep.authors}} on {{rep.date}}</p>
+        </th>
+        <td class="numid"> {{rep.year}}-{{rep.number}}</td>
+        <td class="length">{{rep.pages}} pp.</td>
+        <td class="download">
+          {% for file in rep.files %}
+            {% if file.file.url %}
+              <div><a href="{{file.file.url}}">{{file.description}}</a> 
+                ({{ file.file.size|filesizeformat }})</div>
+            {% endif %}
+          {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

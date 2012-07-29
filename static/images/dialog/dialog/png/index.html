@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Another attempt at CSS rounded-corner dialogs using the sliding doors technique</title>
+<style type="text/css">
+
+/* this is an example page. Real-use cases should never have inline CSS like this. ;) */
+
+body {
+ font:normal 76% georgia,helvetica,verdana,tahoma,arial,"sans serif";
+ background:#999 url(bg-slice-squidfingers.com.gif);
+}
+
+.dialog {
+ width:67%;
+ margin:0px auto;
+ min-width:20em;
+ max-width:800px; /* I only cut the left background images out to 800px. You could do much larger, etc. */
+ color:#fff;
+}
+
+.dialog .hd .c,
+.dialog .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:11px;
+}
+
+.dialog .ft .c {
+ height:14px;
+}
+
+.dialog .hd {
+ background:transparent url(tl.png) no-repeat 0px 0px;
+ margin-right:14px; /* space for right corner */
+}
+
+.dialog .hd .c {
+ background:transparent url(tr.png) no-repeat right 0px;
+ margin-right:-14px; /* pull right corner back over "empty" space (from above margin) */
+}
+
+.dialog .bd {
+ background:transparent url(ml.png) repeat-y 0px 0px;
+ margin-right:6px;
+}
+
+.dialog .bd .c {
+ background:transparent url(mr.png) repeat-y right 0px;
+ margin-right:-6px;
+}
+
+.dialog .bd .c .s {
+ margin:0px 8px 0px 4px;
+ background:#000 url(ms.jpg) repeat-x 0px 0px;
+ padding:1em;
+}
+
+.dialog .ft {
+ background:transparent url(bl.png) no-repeat 0px 0px;
+ margin-right:14px;
+}
+
+.dialog .ft .c {
+ background:transparent url(br.png) no-repeat right 0px;
+ margin-right:-14px;
+}
+
+/* content-specific */
+
+.dialog h1 {
+ /* header */
+ font-size:2em;
+ margin:0px;
+ padding:0px;
+ margin-top:-0.6em;
+}
+
+p {
+ font-family:verdana,tahoma,arial,"sans serif";
+}
+
+.dialog p {
+ margin:0.5em 0px 0px 0px;
+ padding:0px;
+ font:0.95em/1.5em arial,tahoma,"sans serif";
+}
+
+html>body .dialog pre {
+ font-size:1.1em;
+}
+
+</style>
+</head>
+
+<body>
+
+<div>
+
+<p>Also see the <a href="../">GIF-based version</a>.</p>
+
+<p><a href="../dialog.zip">Download this code + images</a></p>
+
+<div class="dialog">
+ <div class="hd"><div class="c"></div></div>
+ <div class="bd">
+  <div class="c">
+   <div class="s">
+
+    <!-- content area -->
+
+    <h1>This is an inline dialog.</h1>
+
+    <p>Note this particular version will not render correctly in IE &lt; 7, as no DirectX/alphaImageLoader filters are being applied.</p>
+    <p>As alpha transparency is being applied with the PNGs, margins are used to make room to allow the "sliding doors" technique to have a transparent right-hand corner that does not have the left side tiling underneath it.</p>
+    <p>For example: The top right-hand corner image is 14px wide - so a margin-right:14px is applied to .hd, and then a margin-right:-14px is applied to .hd .c in order to "pull back" the right corner image into the "empty" space left by the first margin. (Neat trick, eh?)</p>
+
+    <p>This approach makes use of the "sliding doors" technique of background image layering, where two elements are nested in order to provide "left" and "right" images.</p>
+    <p>In this particular case, the left images have been cut at 800px width but could easily be larger for fluid use.</p>
+    <p>The dialog is split up into three main components, following a "header, body, footer" format - specifically, .hd, .bd and .ft in CSS. This formatting approach is the idea of <a href="http://nate.koechley.com/blog/">Nate Koechley</a>.</p>
+    <p>eg.</p>
+
+<pre>
+&lt;div class="dialog"&gt;
+
+ &lt;div class="hd"&gt;
+  &lt;div class="c"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="bd"&gt;
+  &lt;div class="c"&gt;
+   &lt;-- main content goes here --&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="ft"&gt;
+  &lt;div class="c"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+</pre>
+
+    <p>The header and footer elements are typically empty and serve primarily as hooks for the corners in CSS, but could easily be extended.</p>
+
+    <p>The .c class is where the right corner (or side) image is applied.</p>
+
+    <!-- content area -->
+
+   </div>
+  </div>
+ </div>
+ <div class="ft"><div class="c"></div></div>
+</div>
+
+<p>That was a dialog.</p>
+
+<p>Resources:</p>
+
+<p>tl.png</p>
+<img src="tl.png" alt="tl.png" />
+
+<p>tr.png</p>
+<img src="tr.png" alt="tr.png" />
+
+<p>ml.png</p>
+<img src="ml.png" alt="ml.png" />
+
+<p>mr.png</p>
+<img src="mr.png" alt="mr.png" />
+
+<p>bl.png</p>
+<img src="bl.png" alt="bl.png" />
+
+<p>br.png</p>
+<img src="br.png" alt="br.png" />
+
+<p>ms.jpg (optional body gradient)</p>
+<img src="ms.jpg" alt="ms.jpg" />
+
+</div>
+
+</body>
+</html>

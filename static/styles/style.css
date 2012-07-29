@@ -1,0 +1,480 @@
+/*
+ * Colors
+ *
+ * Purple: #625E7F
+ * Dk Purple: #625172
+ * Blue: #65788E
+ * Brown: #817A68
+ * Lt Brown: #C1B289
+ */
+
+body {
+  margin:10px 10px 0px 10px;
+  padding:0px;
+}
+
+.containingbox
+{
+  width: 86%;
+  min-width: 640px;
+  /* border: 1px solid #F63;*/
+  position:absolute;
+  left:7%;
+  top:150px;
+}
+
+#left {
+  /* position: absolute;
+  left:7%;
+  top:155px;
+  width:120px;
+  background:#817A68;
+  padding-top:20px;
+  padding-bottom:5px; */
+  float:left;
+  text-align:center;
+  padding-right:10px;
+  width:120px;
+  height: 300px;
+}
+
+#centerright{
+  margin-left:120px;
+  margin-right:0px;
+  /* position:absolute;
+  left:190px;
+  right: 220px;
+  top:150px; */
+/* background:#D4DDFF; */
+}
+
+div.centerright{
+  /* background:#D4DDFF; */
+  padding: 5px;
+}
+
+#center{
+  margin-left:120px;
+  margin-right:200px;
+  /* position:absolute;
+  left:190px;
+  right: 220px;
+  top:150px; */
+/* background:#D4DDFF; */
+}
+
+div.center{
+  /* background:#D4DDFF; */
+  padding: 5px;
+}
+
+div.footer{
+  /* background:#D4DDFF; */
+
+  clear:both;
+  text-align:center;
+  padding:5px;
+}
+
+
+div.newsitem{
+  color: #FFFFFF;
+  background:#65788E;
+  margin-bottom:8px;
+}
+
+#right {
+  /* position: absolute;
+  right:10px;
+  top:100px; */
+  float:right;
+  width:200px;
+  /* background:#D4DDFF; */
+  padding-top:0px;
+  padding-left:10px;
+  /*height:300px;*/
+}
+
+#banner {
+  background:#817A68;
+  /* height:101px;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  height:100px; */
+  padding-bottom:10px;
+}
+html>body #banner {		
+  height:93px;
+  margin-bottom:1px;
+}
+
+p,h1,h2,pre {
+  margin:0px 10px 10px 10px;
+}
+
+h1 {
+  font-size:14px;
+  padding-top:10px;
+}
+
+#banner h1 {
+  font-size:14px;
+  /* padding: 10px 10px 0px 10px; 
+  margin: 10px; */
+}
+
+#right p {
+  font-size:12px
+}
+
+
+body {
+  behavior:url("htc/csshover.htc");
+  /* background:#C1B289; */
+  background:white;
+}
+
+* {
+  font-family:verdana,tahoma,helvetica;
+  font-size:12px;
+}
+
+.bibtex {
+  font-family:monospace;
+}
+
+/* My additions */
+
+
+#footer {
+  clear:both;
+  font-size:10px;
+}
+
+#rightimg {
+  margin-top: 4px;
+  margin-left: 10px;
+  margin-bottom: 4px;
+  border: none;
+}
+
+#rightimg td {
+  border-bottom:none;
+  padding:0px 0px 0px 0px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+
+/* Resets 'a' tags for banner and other sections */
+
+#Title a {
+  text-decoration:none;
+  margin:-15px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 32px;
+  width: 85%;
+  color: #FFFFFF;
+  left: 114px;
+  top:5px;
+  position: relative;
+  /* text-align: left;
+
+  top: 25px; */
+}
+
+#Title a:hover {
+  color:black;
+}
+
+#banner h1{
+}
+
+#banner h2{
+}
+
+#Title2 a{
+  text-decoration:none;
+  margin:0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 18px;  
+  width: 75%;
+  color: #FFFFFF;
+  position: relative;
+  left: 114px;
+  top:5px;
+  /* top: 80px; 
+  text-align: left;*/
+}
+
+#Title2 a:hover {
+  color:black;
+}
+
+/* Course list styling */
+/* #centerright li {
+list-style-type: circle;
+} */
+
+/* Image styling */ 
+#brownimg {
+  position:absolute;
+  border:none;
+  left:30px;
+  top:20px;
+}
+
+#titleimg {
+  position:relative;
+  top:-4px;
+  left:56px;
+}
+
+#damimg {
+  position:absolute;
+  right:10px;
+}
+
+/* End my additions */
+
+.lheader {
+float:left;
+font-size:small;
+font-weight:bold;
+}
+
+.rheader {
+float:right;
+font-size:x-small;
+font-weight:bold;
+}
+
+.hrspace {
+margin-bottom:20px;
+}
+
+/* Table additions */
+table {
+  /* margin:1.5em 0; */
+  margin: 0 0;
+  font-size:85%;
+}
+th, td {
+  border-bottom:1px solid #ace;
+  padding:5px 13px 5px 8px;
+  text-align:center;
+  color:#235;
+  vertical-align:middle;
+}
+th {
+  background:#fff;
+  color:#123;
+}
+.name {
+  width:27%;
+  text-align:center;
+}
+
+.year {
+  text-align:center;
+}
+
+.name p{
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
+.name p.departmenttitle{
+  font-size:11px;
+  color: #333;
+}
+
+p.advisor, p.graduation_year{
+  font-size:10px;
+  color: #333;
+  font-weight:bold;
+}
+
+.email p{
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
+.research p{
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
+.year p{
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
+.email {
+  width:40%;
+  text-align:center;
+}
+.tableimage {
+  width:15%;
+  text-align:center;
+}
+.research {
+  width:40%;
+}
+.head th {
+  background:#123456 url("../images/bg_table_head.jpg") repeat-x;
+  border-bottom-width:0;
+  color:#fff;
+  vertical-align:top;
+}
+.alt td {
+  background:url("../images/bg_table.jpg") repeat-x 0 50%;
+}
+.alt th {
+  background:url("../images/bg_table.jpg") repeat-x 0 0;
+}
+
+a:link, a:visited, a:active
+{
+  text-decoration: none;
+  color: #625E7F;
+}
+a[href]:hover
+{
+  text-decoration: underline;
+  color: #625E7F;
+}
+
+.atimage {
+margin-bottom:-2px; 
+margin-left:1px; 
+margin-right:1px;
+}
+
+/* Added by Akil, 07/16/06 */
+.title {
+  width:50%;
+  text-align:left;
+  vertical-align:top;
+}
+.title div.toprow {
+  text-align:center;
+}
+.title p {
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+.title p.author {
+  font-size:10px;
+  color:#333;
+}
+.numid {
+  width:12%;
+  vertical-align:top;
+}
+.length {
+  width:13%;
+  vertical-align:top;
+}
+.download {
+  width:17%;
+  vertical-align:top;
+}
+
+/*Added by Akil 07/19/06 */
+
+.date {
+  width:15%;
+  text-align:left;
+  vertical-align:top;
+}
+.date div.toprow {
+  text-align:center;
+}
+.date div {
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+}
+
+.speaker {
+  width:30%
+  text-align:left;
+  vertical-align:top;
+  font-weight:bold;
+}
+.speaker div.toprow {
+  text-align:center;
+}
+
+.speaker div.inst {
+  font-size:10px;
+}
+
+.semtitle {
+   width:30%;
+   text-align:left;
+   vertical-align:top;
+}
+.semtitle div.toprow {
+   text-align:center;
+}
+
+div.semtitle {
+   font-size:11px;
+   width:100%;
+}
+
+.notes {
+   width:20%;
+   text-align:left;
+   vertical-align:top;
+}
+.notes div.toprow {
+   text-align:center;
+}
+.notes div.cancelled {
+   color:red;
+   font-weight:bold;
+}
+
+div.activetab {
+color:white;
+font-weight:bold;
+}
+
+td.topmenuactive {
+  width:79px;
+  background:url("../images/tabs/activetab.gif");
+  background-repeat:none;
+  border-bottom:0px;
+  /* padding:5px 13px 5px 8px;*/
+  text-align:center;
+  color:#235;
+  vertical-align:middle;
+}
+
+td.topmenu {
+  border-bottom:0px;
+  width:79px;
+  /* padding:5px 13px 5px 8px;*/
+  text-align:center;
+  color:#235;
+  vertical-align:middle;
+}
+
+td.topmenudiv {
+  border-bottom:0px;
+  /* padding:5px 13px 5px 8px;*/
+  text-align:center;
+  color:#235;
+  vertical-align:middle;
+}
+
+table.contenttable {
+margin-top:-2px;
+}
+
+table.toplist {
+margin-left:-2px;
+
+  /* End table additions */	  

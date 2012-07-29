@@ -1,0 +1,52 @@
+{% extends "researchgroup/two-column.html" %}
+
+{% load email %}
+{% block title %}Home{% endblock %}
+
+{% block main %}
+  <h1>Scientific Computing Group at Brown University</h1>
+
+  <table id="rightimg" align="right">
+    <tr>
+      <td>
+        <img src="{{ random_image.image.url }}" id="frontimg" alt="{{random_image.caption}}" width="200">
+        <p>{{random_image.caption}}</p>
+      </td>
+    </tr>
+  </table>
+  <p>
+    The Scientific Computing and Numerical Analysis group has its
+    particular strength in the analysis and application of high order
+    numerical methods including spectral and spectral element methods,
+    discontinuous Galerkin finite element methods, ENO and WENO finite
+    difference and finite volume methods, compact and other high-order
+    finite difference methods.
+  </p>
+
+  <p>
+    The applications of these methods span wide including modeling and
+    analysis of problems in computational biology, electromagnetics,
+    high speed flows, material science, semiconductor device
+    simulations as well as problems in optical communication systems
+    and fiberoptics to name a few.  
+  </p>
+{% endblock %}
+
+{% block right %}
+  <div id="right">
+    {% for item in news_items %}
+      <div class="newsdialog">
+        <div class="hd"><div class="c"></div></div>
+        <div class="bd"><div class="c"><div class="text">
+            <!-- Start News Content -->
+            <p><a href="{{item.url}}">{{item.title}}</a></p>
+            {% if item.lead_text %}
+              <p>{{ item.lead_text|safe }}</p>
+            {% endif %}
+            {{ item.date|date:"N d Y" }}
+        </div></div></div>
+        <div class="ft"><div class="c"></div></div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

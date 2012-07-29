@@ -1,0 +1,56 @@
+{% extends "researchgroup/one-column.html" %}
+
+{% load email %}
+{% block title %}Seminars in {{sem_year}}{% endblock %}
+
+{% block main %}
+  <h1> Scientific Computing Group Seminars  - Academic Year {{sem_year}} / {{ sem_year|add:1 }}</h1>
+  
+  <p>
+  Other years:
+  {% for ac_year in sem_year_list %}
+    <a class="reptitle" href="{{dynsite_root}}seminars/by-year/{{ac_year}}/">{{ac_year}} - {{ ac_year|add:1 }}</a>
+    {% if not forloop.last %} &middot; {% endif %}
+  {% endfor %}
+  </p>
+
+  <table cellspacing="0">
+    <tr class="head">
+      <th class="date"><div class="toprow">Date</div></th>
+      <th class="speaker"><div class="toprow">Speaker</div></th>
+      <th class="semtitle">Title</th>
+      <th class="slides">Slides/Notes </th>
+    </tr>
+
+    {% for sem in object_list %}
+      <tr>
+        <th class="date">
+          <div><a href="{{dynsite_root}}seminars/{{sem.id}}/">{{ sem.time|date:"N d Y P" }}</a></div>
+        </th>
+        <td class="speaker">
+          <div>
+          {% if sem.speaker_homepage %}
+            <a href="{{sem.speaker_homepage}}">{{sem.speaker}}</a>
+          {% else %}
+            {{sem.speaker}}
+          {% endif %}
+          </div>
+          <div class="inst">{{sem.speaker_affiliation}}</div>
+        </td>
+        <td class="semtitle">
+          <div>{{sem.title}}</div>
+          {% if sem.notes %}
+            <div>{{sem.notes}}</div>
+          {% endif %}
+        </td>
+        <td class="slides">
+          {% if sem.slides %}
+            <a href="{{sem.slides.url}}">Slides</a>
+          {% endif %}
+          {{sem.notes}}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
+

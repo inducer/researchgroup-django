@@ -1,0 +1,18 @@
+{% extends "researchgroup/one-column.html" %}
+
+{% load email %}
+{% block title %}{{item.title}}{% endblock %}
+
+{% block main %}
+  <h1>{{item.title}}</h1>
+  <p>
+    <em>Date:</em> {{ item.date|date:"N d Y" }}
+  </p>
+  <p>
+    <em>Author:</em> {{item.author}}
+  </p>
+  <p>
+    <b>{{item.lead_text|safe }}</b>{{item.abstract|safe }}
+  </p>
+{% endblock %}
+

@@ -1,0 +1,182 @@
+/* Dialog box stuff */
+.dialog {
+position:absolute;
+left:7%;
+ width:86%;
+ /* margin:0px auto; */
+ min-width:640px;
+ color:#fff;
+}
+
+.dialog .hd .c,
+.dialog .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:10px;
+}
+
+.dialog .ft .c {
+ height:10px;
+}
+
+.dialog .hd {
+ background:transparent url(../images/tl.gif) no-repeat 0px 0px;
+}
+
+.dialog .hd .c {
+ background:transparent url(../images/tr.gif) no-repeat right;
+}
+
+.dialog .bd {
+ margin:0px 0px 0px 0px;
+ background:#83A4BA url(../images/ms.jpg) repeat-x 0px 0px;
+ padding:8px; 
+ min-height:60px;
+ height:auto; !important;
+ /* height:75px;*/
+}
+
+.dialog .ft {
+ background:transparent url(../images/bl.gif) no-repeat 0px 0px;
+}
+
+.dialog .ft .c {
+ background:transparent url(../images/br.gif) no-repeat right;
+}
+
+/* Left dialog box */
+.leftdialog {
+position:relative;
+left:0%;
+ width:100%;
+ /* margin:0px auto;
+ min-width:20em; */
+ color:#fff;
+}
+
+.leftdialog .hd .c,
+.leftdialog .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:10px;
+}
+
+.leftdialog .ft .c {
+ height:14px;
+}
+
+.leftdialog .hd {
+ background:transparent url(../images/tl.gif) no-repeat 0px 0px;
+}
+
+.leftdialog .hd .c {
+ background:transparent url(../images/tr.gif) no-repeat right;
+}
+
+.leftdialog .bd {
+ margin:0px 0px 0px 0px;
+ background:#83A4BA url(../images/ms.jpg) repeat-x 0px 0px;
+ padding:0em;
+ height:90px;
+}
+
+.leftdialog .ft {
+ background:transparent url(../images/bl.gif) no-repeat 0px 0px;
+}
+
+.leftdialog .ft .c {
+ background:transparent url(../images/br.gif) no-repeat right;
+}
+
+/* News dialog */
+.newsdialog {
+position:relative;
+left:0%;
+width:100%;
+ /* margin:0px auto;
+ min-width:20em; */
+/*  color:#fff;*/
+color:#f11100;
+font-weight:bold;
+}
+
+.newsdialog .hd .c,
+.newsdialog .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:10px;
+}
+
+.newsdialog .ft .c {
+ height:14px;
+}
+
+.newsdialog .hd {
+ background:transparent url(../images/newst.gif) no-repeat 0px 0px;
+}
+
+.newsdialog .bd {
+ margin:0px 0px 0px 0px;
+/*  background:#83A4BA url(../images/newsfiller.gif) repeat-y 0px 0px; */
+ /* min-height:30px; */
+ background:transparent url(../images/newsfiller.gif) repeat-y 0px 0px;
+}
+
+.newsdialog .bd .c {
+background:transparent url(../images/newsc.gif) no-repeat 0px 0px;
+ padding:0em;
+ text-align:center;
+ min-height:30px;
+ height:auto !important;	/* Stupid IE hack */
+ height:30px;
+}
+
+.newsdialog .bd .c .text {
+margin-left:5px;
+margin-right:5px;
+}
+
+.newsdialog .ft {
+ background:transparent url(../images/newsb.gif) no-repeat 0px 0px;
+ margin-bottom:5px;
+}
+
+/* Menu dialog */
+
+.menudialog {
+position:relative;
+left:0%;
+width:100%;
+ /* margin:0px auto;
+ min-width:20em; */
+ color:#fff;
+}
+
+.menudialog .hd .c,
+.menudialog .ft .c {
+ font-size:1px; /* ensure minimum height */
+ height:10px;
+}
+
+.menudialog .ft .c {
+ height:14px;
+}
+
+.menudialog .hd {
+ background:transparent url(../images/menut.gif) no-repeat 0px 0px;
+}
+
+.menudialog .bd {
+ margin:0px 0px 0px 0px;
+ background:transparent url(../images/menuc.gif) repeat-x 0px 0px;
+ min-height:30px;
+ padding:0em;
+ text-align:center;
+}
+
+.menudialog .bd .c {
+background:transparent url(../images/menufiller.gif) repeat-y 0px 0px;
+}
+
+.menudialog .ft {
+ background:transparent url(../images/menub.gif) no-repeat 0px 0px;
+}
+
+/* End dialog box stuff */

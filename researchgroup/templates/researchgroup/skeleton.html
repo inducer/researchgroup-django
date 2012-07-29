@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Scientific Computing Group - {% block title %}Generic Page{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{staticsite_root}}styles/style.css"/>
+    <link rel="stylesheet" type="text/css" href="{{staticsite_root}}styles/dialog.css"/>
+    <link rel="stylesheet" type="text/css" href="{{staticsite_root}}styles/menu.css"/>
+  </head>
+
+  <body>
+
+    <div class="dialog">
+      <div class="hd"><div class="c"></div></div>
+      <div class="bd">
+        <a href = "http://www.brown.edu"><img alt="Brown Shield" id="brownimg" src="{{staticsite_root}}images/brownlogo.png" ></img></a>
+        <div id="Title"><h1><a href = "{{dynsite_root}}">Scientific Computing Group</a></h1></div>
+        <div id="Title2"><h2><a href = "http://www.dam.brown.edu">Division of Applied Mathematics</a></h2></div>
+      </div>
+      <div class="ft"><div class="c"></div></div>
+    </div>
+
+    <div class="containingbox">
+      <div id="left">
+        <div class="menudialog">
+          <div class="hd"><div class="c"></div></div>
+          <div class="bd"><div class="c">
+              <center>
+                <ul id="menu">
+                  <li class="folder">
+                  <a href="{{dynsite_root}}people/faculty/" class="submenu">People</a>
+                  <ul>
+                    {% for cat in pcat_list %}
+                    <li><a href="{{dynsite_root}}people/{{ cat.name|lower }}/">{{cat.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+                  </li>
+                  <li><a href="{{dynsite_root}}page/research/">Research</a></li>
+                  <li class="folder">
+                  <a href="{{dynsite_root}}reports/current/" class="submenu">Reports</a>
+                  <ul>
+                    <li><a href="{{dynsite_root}}reports/by-year/all/">All</a></li>
+                    {% for year in rep_year_list %}
+                      <li><a href="{{dynsite_root}}reports/by-year/{{year}}/">{{year}}</a></li>
+                    {% endfor %}
+                  </ul>
+                  </li>
+                  <li class="folder">
+                  <a href="{{dynsite_root}}classes/" class="submenu">Courses</a>
+                  <ul>
+                    {% for cls in class_list %}
+                      <li><a href="{{dynsite_root}}classes/#{{ cls.department|lower }}{{cls.number}}">{{cls.department}}{{cls.number}}</a></li>
+                    {% endfor %}
+                  </ul>
+                  </li>
+                  <li class="folder">
+                  <a href="{{dynsite_root}}seminars/current/" class="submenu">Seminars</a>
+                  <ul>
+                    {% for ac_year in sem_year_list %}
+                    <li><a href="{{dynsite_root}}seminars/by-year/{{ac_year}}/">{{ac_year}} - {{ ac_year|add:1 }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  </li>
+                  <li><a href="{{dynsite_root}}page/software/">Software</a></li>
+                  <li><a href="{{dynsite_root}}admin/">Admin</a></li>
+                </ul>
+              </center>
+          </div></div>
+          <div class="ft"><div class="c"></div></div>
+        </div>
+      </div>
+
+      {% block body %}
+      {% endblock %}
+
+      <div class="footer">
+        <hr />
+        <p>
+        Send mail to dam<img src="{{staticsite_root}}images/at.gif" class="atimage">dam.brown.edu with questions or comments about
+        this web site.</p>
+        <p>
+        Copyright &copy; 2009 <a href="http://www.dam.brown.edu">Division of Applied Mathematics</a>, <a href="http://www.brown.edu">Brown University</a>
+        </p>
+        <p>
+        <a href="http://www.djangoproject.com/"><img src="{{staticsite_root}}images/djangosite80x15_grey.gif" border="0" alt="A Django site." title="A Django site." /></a>
+        </p>
+      </div>
+    </div>
+  </body>
+
+</html>
+
+
