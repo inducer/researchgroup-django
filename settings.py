@@ -26,7 +26,7 @@ DATABASES = {
         'NAME': 'scicomp',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'USER': 'scicomp',
-        'PASSWORD': 'Thee0ref',
+        'PASSWORD': 'CHANGEME',
     }
 }
 
