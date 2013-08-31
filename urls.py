@@ -8,7 +8,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 def get_patterns():
-    urlb = "^"
+    urlb = "^scicomp/"
 
     plist = [
             (urlb+r'/?$', 'scg.researchgroup.views.main_page'),

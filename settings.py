@@ -68,12 +68,13 @@ TEMPLATE_LOADERS = (
     #'django.template.loaders.eggs.load_template_source',
 )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.doc.XViewMiddleware',
-)
+if 0:
+	MIDDLEWARE_CLASSES = (
+	    'django.middleware.common.CommonMiddleware',
+	    'django.contrib.sessions.middleware.SessionMiddleware',
+	    'django.contrib.auth.middleware.AuthenticationMiddleware',
+	    'django.middleware.doc.XViewMiddleware',
+	)
 
 ROOT_URLCONF = 'scg.urls'
 
@@ -88,6 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.messages',
     #'django.contrib.sites',
     'scg.researchgroup',
     'django.contrib.admin',
